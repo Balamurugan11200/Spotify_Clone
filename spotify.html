@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spotify</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="icon" type="image/png" href="./Image/download (1).jpg" >
+</head>
+
+<body> 
+    <div class="row container-fluid bg-dark">
+        <div class="col-2 position-fixed container-fluid" style="display: block;">
+        
+            <div class="navbar bg-dark d-lg-block position-fixed container-fluid top-0">
+                <a class="navbar-brand text-success fw-bold">
+                    <img src="./Image/download (1).jpg" height="30px" alt="" class="rounded-5"> Spotify
+                </a>
+            </div>
+            <ul class="navbar-nav me-auto gap-5 ms-3 d-none d-lg-inline-flex mt-5">    
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#container" id="largehome">
+                        <i class="fa-solid fa-house text-primary">
+                        </i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#" id="largesearch" >
+                        <i class="fa-solid fa-magnifying-glass text-primary">
+                        </i>  Search
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#librarydiv" id="largelibrary">
+                        <i class="fa-solid fa-book-open-reader text-primary"></i>    Library
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#" id="largepremium">
+                        <i class="fa-brands fa-spotify text-primary">
+                        </i>  Premium    
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="container-fluid d-none d-lg-inline-flex justify-content-center bg-success text-center gap-4 border-success rounded-3"  style="margin-top: 120px" id="mediaplayer">
+                <div class="col-1">
+                    <img src="./Image/repeat-solid.svg" alt="" class="img-fluid" height="50px" width="23px" id="repeat"> <h6 class="looping"></h6>
+                </div>
+                <div class="col-1">
+                    <img src="./Image/backward-solid.svg" alt=""  class="img-fluid" height="50px" width="25px" id="backward">
+                </div>
+                <div class="col-1">
+                    <img src="./Image/pause-solid.svg" alt="" class="img-fluid" height="50px" width="24px" id="pause">
+                </div>
+                <div class="col-1">
+                    <img src="./Image/forward-solid.svg" alt="" class="img-fluid" height="50px" width="25px" id="farward">
+                </div>
+                <div class="col-1">   
+                    <img src="./Image/shuffle-solid.svg" alt="" class="img-fluid" height="50px" width="23px" id="playlist">
+                </div>
+            </div>
+
+             <!-- MOBILE BASED SCREEN -->   
+        
+            <button type="button" class="row d-lg-none container-fluid btn btn-success position-relative position-fixed top-50 rounded-0" style= "margin-top: 285px">
+        
+                <div class="justify-content-center bg-success text-center d-flex gap-5" id="screensize">
+                    <div class="col-1">
+                        <!-- <i class="fa-solid fa-repeat text-black fa-2x" id="smallrepeat"></i> -->
+                        
+                        <img src="./Image/repeat-solid.svg" alt="" class="img-fluid" height="60px" width="30px" id="smallrepeat"> <h6 class="looping"></h6>
+                    </div>
+                    <div class="col-1">
+                        <i class="fa-solid fa-backward text-black fa-2x" id="smallbackward"></i>
+                        <!-- <img src="./Image/backward-solid.svg" alt=""  class="img-fluid" height="50px" width="25px" id="backward"> -->
+                    </div>
+                    <div class="col-1">
+                        <!-- <i class="fa-solid fa-circle-pause text-black fa-2x" id="smallpause"></i> -->
+                        <img src="./Image/pause-solid.svg" alt="" class="img-fluid" height="50px" width="24px" id="smallpause">
+                    </div>
+                    <div class="col-1">
+                        <i class="fa-solid fa-2x fa-forward text-black" id="smallfarward"></i>
+                        <!-- <img src="./Image/forward-solid.svg" alt="" class="img-fluid" height="50px" width="25px" id="farward"> -->
+                    </div>
+                    <div class="col-1">
+                        <a href="#container">
+                            <i class="fa-solid fa-shuffle text-black fa-2x" id="smallplaylist"></i>
+                            <!-- <img src="./Image/shuffle-solid.svg" alt="" class="img-fluid" height="50px" width="23px" id="playlist"> -->
+                        </a>
+                    </div>
+                
+                </div>
+          </button>
+          <button type="button" class="row d-flex d-lg-none container-fluid btn btn-dark position-relative position-fixed top-50" style= "margin-top: 325px;height: 80px">
+
+                <div class="navbar justify-content-center text-center" > 
+                    <div class="nav-item col-3">
+                        <a class="nav-link text-light" href="#container" id="home">
+                            <i class="fa-solid fa-house text-primary">
+                            </i>   Home
+                        </a>
+                    </div>
+                    <div class="nav-item col-3">
+                        <a class="nav-link text-light" href="#" id="smallsearch">
+                            <i class="fa-solid fa-magnifying-glass text-primary"></i>   Search
+                        </a>
+                    </div>
+                    <div class="nav-item col-3">
+                        <a class="nav-link text-light" href="#librarydiv"    id="library">
+                            <i class="fa-solid fa-book-open-reader text-primary"></i>    Library
+                        </a>
+                    </div>
+                    <div class="nav-item col-3">
+                        <a class="nav-link text-light" href="#" id="premium"> 
+                            <i class="fa-brands fa-spotify text-primary"></i>  Premium
+                        </a>
+                    </div>
+                </div>
+            </button>
+        </div>
+        <div class="col-2"></div>
+        <div class="container-fluid col-10 mb-5 me-4 me-lg-0 bg-black">
+ 
+            <div id="searcharia" style="display: none;">
+                <input class="bg-light fw-bold" style="width: 70%; margin-top: 60px; display: inline-flex;font-style: italic;" id="userinput">
+                <button class="text-black bg-success rounded-3" id="searchresult">Search     
+                </button>
+                <div>
+                    <img src="" alt="" id="findedsong" class="img-fluid text-light" style="height:70vh;width: 100%; display: none;">
+                </div>
+            </div>
+
+            <div class="row my-5 align-items-center justify-content-center mt-lg-5" style="display: none;" id="subscription">
+                <div class="col-7 col-lg-4 col-xl-3 mt-2">
+                    <div class="card-body text-center py-4 bg-light rounded-3">
+                        <h3 class="card-tittle">Spotify</h3>
+                        <p class="card-subtittle lead"> Subscription</p>
+                        <p class="display-5 my-4 text-black fw-bold ">$149.00</p>
+                        <p class="card-text mx-5 text-muted ">One Month Subscription Price is Rs.149</p>
+                        <a href="#paymentprocess" class="btn btn-outline-primary btn-lg mt-3 bg-primary text-light buynow">Buy Now</a>
+                    </div>
+                </div>
+        
+                <div class="col-7 col-lg-4 col-xl-3 mt-4 rounded-3" >
+                        <div class="card-header text-center text-white bg-primary border-radies-3" style="border-radius: 6px 6px 0px 0px;">Most Popular
+                        </div>
+                        <div class="card-body text-center py-4 border-primary bg-light " style="height:450px ;border-radius: 0px 0px 6px 6px;">
+                            <h3 class="card-tittle">Spotify</h3>
+                            <p class="card-subtittle lead"> Subscription</p>
+                            <p class="display-5 my-4 text-primary fw-bold ">$1600.00</p>
+                            <p class="card-text mx-5 text-muted ">One Year Subscription Price is Rs.1600</p>
+                            <a href="#paymentprocess" class="btn btn-outline-primary btn-lg mt-5 bg-danger text-light buynow">Buy Now</a>
+                        </div>
+                </div>
+        
+                <div class="col-7 col-xl-3 mt-2">
+                    <div class="card-body text-center py-4 bg-light rounded-3">
+                        <h3 class="card-tittle">Spotify</h3>
+                        <p class="card-subtittle lead"> Subscription</p>
+                        <p class="display-5 my-4 text-black fw-bold ">$850.00</p>
+                        <p class="card-text mx-5 text-muted ">Six Month Subscription Price is Rs.850</p>
+                        <a href="#paymentprocess" class="btn btn-outline-primary btn-lg mt-3 bg-primary text-light buynow">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row row-cols-2 row-cols-lg-4  bg-black text-center align-items-center" id="paymentprocess"
+            style="display: none;">
+                <a href="https://pay.google.com/about/">
+                    <img src="./Image/img/Gpay.jpg" alt="" height="60px" width="60px" class="rounded-3">
+                </a>
+                <a href="https://www.phonepe.com/">
+                    <img src="./Image/img/phonepe.png" alt="" height="60px" width="60px" class="rounded-3">
+                </a>
+                <a href="https://paytm.com/">
+                    <img src="./Image/img/paytm.png" alt="" height="60px" width="60px" class="rounded-3">
+                </a>
+
+                <button type="button" class="btn btn-dark">
+                     Other UPI Apps
+                </button>
+                <div class="dropdown">
+                    <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-building-columns text-primary"></i> Net Banking
+                    </button>
+                    <ul class="dropdown-menu bg-dark">
+                        <li>
+                            <a class="dropdown-item" href="https://www.axisbank.com/bank-smart/internet-banking/getting-started">
+                                <img src="./Image/img/axis bank.png" alt="" height="40px" >
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item mt-3" href="https://www.hdfcbank.com/personal/ways-to-bank/online-banking/net-banking">
+                                <img src="./Image/img/hdfc.png" alt="" height="30px" width="100%">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item mt-3" href="https://www.icicibank.com/personal-banking/insta-banking/internet-banking">
+                                <img src="./Image/img/icici.png" alt="" height="30px" width="130px">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item mt-3" href="https://www.onlinesbi.sbi/personal/">
+                                <img src="./Image/img/sbi2.png" alt="" height="40px" width="100%">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item mt-3" href="https://canarabank.com/net-banking">
+                                <img src="./Image/img/canara.png" alt="" height="30px" width="100%">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item mt-3" href="https://www.cityunionbank.com/cub-net-banking-cub-online-banking">
+                                <img src="./Image/img/CUB.jpg" alt="" height="30px" width="100%">
+                            </a>
+                        </li>
+                    </ul>
+                  </div>
+                  <a href="#cardform" type="button" class="btn btn-dark" id="debitcard">
+                    <i class="fa-solid fa-credit-card text-primary"></i> Depet/Credet Cards
+                </a>
+            </div>
+
+            <div class="container-fluid justify-content-center row align-items-center" id="cardform" style="display: none;">
+                <div class="col-sm-8 col-md-6">
+                   <a href="#paymentprocess" type="button" class="btn btn-dark d-none d-lg-inline" style="margin-left: -250px;"> Back</a>
+                    <div class="bg-dark text-light">
+                        <a href="#paymentprocess" type="button" class="btn btn-light d-inline d-lg-none" style="margin-left: -25px;"> Back</a>
+                        <div class="card-header">      
+                            <div class="row p-2 p-lg-3">
+                                <div class="col-md-6">
+                                    <span>CREDIT/DEBIT CARD PAYMENT</span>    
+                                </div>
+        
+                                <div class="col-md-6 text-right" style="margin-top: -5px;">
+                                        <img src="https://img.icons8.com/color/36/000000/visa.png">
+                                        <img src="https://img.icons8.com/color/36/000000/mastercard.png">
+                                        <img src="https://img.icons8.com/color/36/000000/amex.png">    
+                                </div>      
+                            </div>    
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group p-2 p-lg-3">
+                            <label for="cc-number" class="control-label">CARD NUMBER</label>
+                            <input id="cc-number" type="tel" class="input-lg form-control cc-number" autocomplete="cc-number" placeholder="&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;" required>
+                            </div>
+    
+                            <div class="row">
+                                <div class="col-md-6 p-3 p-lg-4">
+                                        <div class="form-group">
+                                        <label for="cc-exp" class="control-label">CARD EXPIRY</label>
+                                        <input id="cc-exp" type="tel" class="input-lg form-control cc-exp" autocomplete="cc-exp" placeholder="&bull;&bull; / &bull;&bull;" required>
+                                        </div>    
+                                </div>
+        
+                                <div class="col-md-6 p-3 p-lg-4">
+                                    <div class="form-group">
+                                        <label for="cc-cvc" class="control-label">CARD CVC</label>
+                                        <input id="cc-cvc" type="tel" class="input-lg form-control cc-cvc" autocomplete="off" placeholder="&bull;&bull;&bull;&bull;" required>
+                                    </div>    
+                                </div>                               
+                            </div>
+
+                            <div class="form-group p-2 p-lg-3">
+                                <label for="numeric" class="control-label">CARD HOLDER NAME</label>
+                                <input  type="text" class="input-lg form-control">
+                            </div>
+    
+                            <div class="form-group p-2 p-lg-3"> 
+                                <input  value="MAKE PAYMENT" type="button" class="btn btn-primary btn-lg form-control" style="font-size: .8rem;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center justify-content-center row row-cols-lg-3 row-cols-2 bg-black mt-5 text-light" id="container">
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/0.jpg" class="img-fluid" alt=""  id="0" aria-valuemin="Ordinary Person-Leo"> 
+                    </a>
+                    <h6>Ordinary_Person -LEO_</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/1.jpg" class="img-fluid" alt=""  id="1" aria-valuemin="Badass-Leo"> 
+                    </a>
+                    <h6>Badass- LEO </h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/2.jpg" class="img-fluid" alt="" id="2" aria-valuemin="Kabadi Kabadi-Ghilli">
+                    </a>
+                    <h6>Kabadi Kabadi-Ghilli</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/3.jpg" class="img-fluid" alt=""  id="3" aria-valuemin="Unnale Unnale-Unnale Unnale"> 
+                    </a>
+                    <h6>Unnale Unnale-Unnale Unnale MassTamilan.com</h6>
+                </div>
+                 
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/4.jpg" class="img-fluid" alt=""  id="4" aria-valuemin="Karuppu Perazhaga-Muni">
+                    </a> 
+                    <h6>Karuppu Perazhaga-Muni</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/5.jpg" class="img-fluid" alt=""  id="5" aria-valuemin="Kokkara Kokkarakko-Ghilli"> 
+                    </a>
+                    <h6>Kokkara kokkarakko-Ghilli</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">              
+                        <img src="./Image/New folder/6.jpg"class="img-fluid" alt=""  id="6" aria-valuemin="Palapalakkura-Ayan"> 
+                    </a>
+                    <h6>Palapalakkura-Ayan</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/5.jpg" class="img-fluid" alt=""  id="7"  aria-valuemin="Sura Thenga-Ghilli" >
+                    </a> 
+                    <h6>Sura Thenga-Ghilli</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/6.jpg" class="img-fluid" alt=""  id="8" aria-valuemin="Vizhi Moodi-Ayan"> 
+                    </a>
+                    <h6>Vizhi Moodi-Ayan</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/9.jpg" class="img-fluid" alt=""  id="9" aria-valuemin="Mesaya Murukku-Meesaya Murukku" > 
+                    </a>
+                    <h6>Mesaya Murukku-Meesaya Murukku</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/10.jpg" class="img-fluid" alt=""  id="10" aria-valuemin="Ella Pugazhum-Azhagiya Tamizh Mahan"> 
+                    </a>
+                    <h6>Ella Pugazhum-Azhagiya Tamizh Mahan</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/11.jpg" class="img-fluid" alt=""  id="11" aria-valuemin="Appadi Podu-Ghilli"> 
+                    </a>
+                    <h6> Appadi Podu-Ghilli</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/11.jpg" class="img-fluid" alt=""  id="12" aria-valuemin="Arjunaru Villu-VmusiQ.Com-Ghilli"> 
+                    </a>
+                    <h6>Arjunaru Villu-VmusiQ.Com-Ghilli</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/13_2_300x170.jpg" class="img-fluid" alt="" id="13" aria-valuemin="Iragai Pole-Naan Mahan Alla">
+                    </a> 
+                    <h6>Iragai Pole-Naan Mahan Alla</h6>
+                </div>
+                <div class="col p-2"> 
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/14_300x170.jpg" class="img-fluid" alt=""  id="14" aria-valuemin="Kanmoodi Thirakumpothu-Sachin">
+                    </a>
+                    <h6>Kanmoodi Thirakumpothu-Sachin</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/15_300x170.jpg" class="img-fluid" alt=""  id="15" aria-valuemin="Venam Venam-Vaseegara"> 
+                    </a>
+                    <h6>Venam Venam-Vaseegara</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/16_300x170.jpg" class="img-fluid" alt=""  id="16" aria-valuemin="Hayyoda-Jawan"> 
+                    </a>
+                    <h6>Hayyoda -Jawan</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/17_300x170.jpg" class="img-fluid" alt=""  id="17" aria-valuemin="Hukum-Jailer">
+                    </a> 
+                    <h6>Hukum - Thalaivar Alappara -Jailer  MassTamilan.dev</h6>
+                </div> 
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/18_300x170.jpg" class="img-fluid" alt=""  id="18" aria-valuemin="Jalabulajangu-Don">
+                    </a> 
+                    <h6>Jalabulajangu - MassTamilan.dev-Don</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/3.jpg" class="img-fluid" alt=""  id="19" aria-valuemin="June Ponal-Unnale Unnale"> 
+                    </a>
+                    <h6>June Ponal-Unnale Unnale MassTamilan.com</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/20_300x170.jpg" class="img-fluid" alt=""  id="20" aria-valuemin="Kana Kangiren-Ananda Thandavam"> 
+                    </a>
+                    <h6>Kana Kangiren -Ananda Thandavam  MassTamilan.com</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">              
+                        <img src="./Image/New folder/21_300x170.jpg" class="img-fluid" alt=""  id="21" aria-valuemin=" Nakka Mukka-Kadhalil Vizhunthen"> 
+                    </a>
+                    <h6>Nakka Mukka -Kadhalil Vizhunthen MassTamilan.com</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/16_300x170.jpg" class="img-fluid" alt=""  id="22" aria-valuemin="Ramaiya-Jawan"> 
+                    </a>
+                    <h6>Ramaiya -Jawan</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/23_300x170.jpg" class="img-fluid" alt=""  id="23"  aria-valuemin="Petta Paraak-Petta" >
+                    </a> 
+                    <h6>Petta Paraak -Petta MassTamilan.org</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/24_1_300x170.jpg" class="img-fluid" alt=""  id="24" aria-valuemin="Porkanda Singam-Vikram"> 
+                    </a>
+                    <h6>Porkanda Singam EDM Version (Additional Song)- MassTamilan.dev-Vikram</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/25_300x170.jpg" class="img-fluid" alt=""  id="25" aria-valuemin="Seval Kodi-Billa" > 
+                    </a>
+                    <h6>Seval Kodi -Billa VmusiQ.Com</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/26_300x170.jpg" class="img-fluid" alt=""  id="26" aria-valuemin="Siragugal Vanthathu-Sarvam"> 
+                    </a>
+                    <h6>Siragugal Vanthathu-Sarvam  StarMusiQ.Com</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/27_1_300x170.jpg" class="img-fluid" alt=""  id="27" aria-valuemin="Thani Vazhi-Darbar"> 
+                    </a>
+                    <h6> Thani Vazhi -Darbar isaiminiya.net</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/21_300x170.jpg" class="img-fluid" alt=""  id="28" aria-valuemin="Thozhiya Enkadhaliya-Kadhalil Vizhunthen"> 
+                    </a>
+                    <h6> Thozhiya En Kadhaliya -Kadhalil Vizhunthen MassTamilan.com</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/29.jpg" class="img-fluid" alt=""  id="29" aria-valuemin="Kannodu Kanbathellam-Jeens">
+                    </a> 
+                    <h6>Kannodu Kanbathellam-Jeens</h6>
+                </div>
+                <div class="col p-2"> 
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/30.jpg" class="img-fluid" alt=""  id="30" aria-valuemin="Enakke Enakka-Jeens">
+                    </a>
+                    <h6>Enakke Enakka-Jeens</h6>
+                </div>
+                <div class="col p-2">
+                    <a href="#home" class="listitem">
+                        <img src="./Image/New folder/31.jpg" class="img-fluid" alt=""  id="31" aria-valuemin="Columbus Columbus-Jeens"> 
+                    </a>
+                    <h6>Columbus Columbus-Jeens</h6>
+                </div>
+            </div>
+
+            <div id="librarydiv" class="text-light row row-cols-1 row-cols-lg-2 text-center" style="display: none;">
+                <h1 class="my-5 d-block row text-lg-start">Librarys</h1>
+                <div class="col p-2" >   </div>
+                <div class="col p-2" >
+                    <a href="#ghilli" class="albums" id="0">
+                        <img src="./Image/New folder/2.jpg" class="img-fluid" alt=""> 
+                    </a>
+                    <h4>Ghilli</h4>
+                </div>
+                <div class="col p-2" >
+                    <a href="#jeens" class="albums" id="1">
+                        <img src="./Image/New folder/30.jpg"class="img-fluid" alt=""> 
+                    </a>
+                    <h4>Jeens</h4>
+                </div>
+                <div class="col p-2" >
+                    <a href="#ayan" class="albums" id="2">
+                        <img src="./Image/New folder/6.jpg" class="img-fluid" alt=""> 
+                    </a>
+                    <h4>Ayan</h4>
+                </div>
+                <div class="col p-2" >
+                    <a href="#jawan" class="albums" id="3">
+                        <img src="./Image/New folder/16_300x170.jpg" class="img-fluid" alt=""> 
+                    </a>
+                    <h4>Jawan</h4>
+                </div>
+                <div class="col p-2" >
+                    <a href="#kathalilvizhunthen" class="albums" id="4">
+                        <img src="./Image/New folder/21_300x170.jpg" class="img-fluid" alt=""> 
+                    </a>
+                    <h4>Kadhalil Vizhunthen</h4>
+                </div>
+                <div class="col p-2" >
+                    <a href="#leo" class="albums" id="5">
+                        <img src="./Image/New folder/1.jpg" class="img-fluid" alt=""> 
+                    </a>
+                    <h4>Leo</h4>
+                </div>
+                <div class="col p-2" >
+                    <a href="#unnaleunnale" class="albums" id="6">
+                        <img src="./Image/New folder/3.jpg" class="img-fluid" alt=""> 
+                    </a>
+                    <h4>Unnale Unnale</h4>
+                </div>
+                <div class="col p-2" >
+                    <a href="#sachin" class="albums" id="7">
+                        <img src="./Image/New folder/14_300x170.jpg" class="img-fluid" alt=""> 
+                    </a>
+                    <h4>Sachin</h4>
+                </div>
+                <div class="col p-2" >
+                    <a href="#jailer" class="albums" id="8">
+                        <img src="./Image/New folder/17_300x170.jpg" class="img-fluid" alt=""> 
+                    </a>
+                    <h4>Jailer</h4>
+                </div>
+                <div class="col p-2" >
+                    <a href="#don" class="albums" id="9">
+                        <img src="./Image/New folder/18_300x170.jpg" class="img-fluid" alt=""> 
+                    </a>
+                    <h4>Don</h4>
+                </div>
+                <div class="col p-2" >
+                    <a href="#petta" class="albums" id="10">
+                        <img src="./Image/New folder/23_300x170.jpg" class="img-fluid" alt=""> 
+                    </a>
+                    <h4>Petta</h4>
+                </div>
+                <div class="col p-2" >
+                    <a href="#vikram" class="albums" id="11">
+                        <img src="./Image/New folder/24_1_300x170.jpg" class="img-fluid" alt=""> 
+                    </a>
+                    <h4>Vikram</h4>
+                </div>
+                <div class="col p-2" >
+                    <a href="#darbar" class="albums" id="12">
+                        <img src="./Image/New folder/27_1_300x170.jpg" class="img-fluid" alt=""> 
+                    </a>
+                    <h4>Darbar</h4>
+                </div>
+            </div>
+            
+            <div id="albumsong" class="mt-5 text-primary text-center">
+                <div id="ghilli" style="display: none;" class="row row-cols-2 row-cols-lg-3">
+                    <div class="col p-2">
+                        <a href="#home" class="listitem">
+                            <img src="./Image/New folder/2.jpg" class="img-fluid" alt="" id="2" aria-valuemin="Kabadi Kabadi-Ghilli">
+                        </a>
+                        <h6>Kabadi Kabadi-Ghilli</h6>
+                    </div>
+                    <div class="col p-2">
+                        <a href="#home" class="listitem">
+                            <img src="./Image/New folder/5.jpg" class="img-fluid" alt=""  id="5" aria-valuemin="Kokkara Kokkarakko-Ghilli"> 
+                        </a>
+                        <h6>Kokkara kokkarakko-Ghilli</h6>
+                    </div>
+                    <div class="col p-2">
+                        <a href="#home" class="listitem">
+                            <img src="./Image/New folder/5.jpg" class="img-fluid" alt=""  id="7"  aria-valuemin="Sura Thenga-Ghilli" >
+                        </a> 
+                        <h6>Sura Thenga-Ghilli</h6>
+                    </div>
+                    <div class="col p-2">
+                        <a href="#home" class="listitem">
+                            <img src="./Image/New folder/11.jpg" class="img-fluid" alt=""  id="11" aria-valuemin="Appadi Podu-Ghilli"> 
+                        </a>
+                        <h6> Appadi Podu-Ghilli</h6>
+                    </div>
+                    <div class="col p-2">
+                        <a href="#home" class="listitem">
+                            <img src="./Image/New folder/11.jpg" class="img-fluid" alt=""  id="12" aria-valuemin="Arjunaru Villu-VmusiQ.Com-Ghilli"> 
+                        </a>
+                        <h6>Arjunaru Villu-VmusiQ.Com-Ghilli</h6>
+                    </div>
+                </div>
+                <div id="ayan" style="display: none;"> 
+                    <div class="col p-2">
+                        <a href="#home" class="listitem">              
+                            <img src="./Image/New folder/6.jpg"class="img-fluid" alt=""  id="6" aria-valuemin="Palapalakkura-Ayan"> 
+                        </a>
+                        <h6>Palapalakkura-Ayan</h6>
+                    </div>
+                    <div class="col p-2">
+                        <a href="#home" class="listitem">
+                            <img src="./Image/New folder/6.jpg" class="img-fluid" alt=""  id="8" aria-valuemin="Vizhi Moodi-Ayan"> 
+                        </a>
+                        <h6>Vizhi Moodi-Ayan</h6>
+                    </div>
+                </div>
+                <div id="jeens" style="display: none;" class="row row-cols-2 row-cols-lg-3">
+                    <div class="col p-2">
+                        <a href="#home" class="listitem">
+                            <img src="./Image/New folder/29.jpg" class="img-fluid" alt=""  id="29" aria-valuemin="Kannodu Kanbathellam-Jeens">
+                        </a> 
+                        <h6>Kannodu Kanbathellam-Jeens</h6>
+                    </div>
+                    <div class="col p-2"> 
+                        <a href="#home" class="listitem">
+                            <img src="./Image/New folder/30.jpg" class="img-fluid" alt=""  id="30" aria-valuemin="Enakke Enakka-Jeens">
+                        </a>
+                        <h6>Enakke Enakka-Jeens</h6>
+                    </div>
+                    <div class="col p-2">
+                        <a href="#home" class="listitem">
+                            <img src="./Image/New folder/31.jpg" class="img-fluid" alt=""  id="31" aria-valuemin="Columbus Columbus-Jeens"> 
+                        </a>
+                        <h6>Columbus Columbus-Jeens</h6>
+                    </div>
+                </div>
+
+                <div id="jawan" style="display: none;" class="">  
+                    <div class="col p-2">
+                        <a href="#home" class="listitem">
+                            <img src="./Image/New folder/16_300x170.jpg" class="img-fluid" alt=""  id="16" aria-valuemin="Hayyoda-Jawan"> 
+                        </a>
+                        <h6>Hayyoda -Jawan</h6>
+                    </div>
+                    <div class="col p-2">
+                        <a href="#home" class="listitem">
+                            <img src="./Image/New folder/16_300x170.jpg" class="img-fluid" alt=""  id="22" aria-valuemin="Ramaiya-Jawan"> 
+                        </a>
+                        <h6>Ramaiya -Jawan</h6>
+                    </div>
+                </div>
+                <div id="kadhalilvizhunthen" style="display: none;">
+                    <div class="col p-2">
+                        <a href="#home" class="listitem">
+                            <img src="./Image/New folder/21_300x170.jpg" class="img-fluid" alt=""  id="28" aria-valuemin="Thozhiya Enkadhaliya-Kadhalil Vizhunthen"> 
+                        </a>
+                        <h6> Thozhiya En Kadhaliya -Kadhalil Vizhunthen MassTamilan.com</h6>
+                    </div>
+                    <div class="col p-2">
+                        <a href="#home" class="listitem">              
+                            <img src="./Image/New folder/21_300x170.jpg" class="img-fluid" alt=""  id="21" aria-valuemin=" Nakka Mukka-Kadhalil Vizhunthen"> 
+                        </a>
+                        <h6>Nakka Mukka -Kadhalil Vizhunthen MassTamilan.com</h6>
+                    </div>
+                </div>
+                <div id="leo" style="display: none;"> 
+                    <div class="col p-2">
+                        <a href="#home" class="listitem">
+                            <img src="./Image/New folder/0.jpg" class="img-fluid" alt=""  id="0" aria-valuemin="Ordinary Person-Leo"> 
+                        </a>
+                        <h6>Ordinary_Person -LEO_</h6>
+                    </div>
+                    <div class="col p-2">
+                        <a href="#home" class="listitem">
+                            <img src="./Image/New folder/1.jpg" class="img-fluid" alt=""  id="1" aria-valuemin="Badass-Leo"> 
+                        </a>
+                        <h6>Badass- LEO </h6>
+                    </div>
+                </div>
+                <div id="unnaleunnale" style="display: none;">
+                    <div class="col p-2">
+                        <a href="#home" class="listitem">
+                            <img src="./Image/New folder/3.jpg" class="img-fluid" alt=""  id="3" aria-valuemin="Unnale Unnale-Unnale Unnale"> 
+                        </a>
+                        <h6>Unnale Unnale-Unnale Unnale MassTamilan.com</h6>
+                    </div>
+                    <div class="col p-2">
+                        <a href="#home" class="listitem">
+                            <img src="./Image/New folder/3.jpg" class="img-fluid" alt=""  id="19" aria-valuemin="June Ponal-Unnale Unnale"> 
+                        </a>
+                        <h6>June Ponal-Unnale Unnale MassTamilan.com</h6>
+                    </div>
+                </div>
+                <div id="sachin" style="display: none;"> 
+                    <div class="col p-2"> 
+                        <a href="#home" class="listitem">
+                            <img src="./Image/New folder/14_300x170.jpg" class="img-fluid" alt=""  id="14" aria-valuemin="Kanmoodi Thirakumpothu-Sachin">
+                        </a>
+                        <h6>Kanmoodi Thirakumpothu-Sachin</h6>
+                    </div>
+                </div>
+                <div id="jailer" style="display: none;">
+                    <div class="col p-2">
+                        <a href="#home" class="listitem">
+                            <img src="./Image/New folder/17_300x170.jpg" class="img-fluid" alt=""  id="17" aria-valuemin="Hukum-Jailer">
+                        </a> 
+                        <h6>Hukum - Thalaivar Alappara -Jailer  MassTamilan.dev</h6>
+                    </div> 
+                </div>
+                <div id="don" style="display: none;">
+                    <div class="col p-2">
+                        <a href="#home" class="listitem">
+                            <img src="./Image/New folder/18_300x170.jpg" class="img-fluid" alt=""  id="18" aria-valuemin="Jalabulajangu-Don">
+                        </a> 
+                        <h6>Jalabulajangu - MassTamilan.dev-Don</h6>
+                    </div>
+                </div>
+                <div id="petta" style="display: none;">
+                    <div class="col p-2">
+                        <a href="#home" class="listitem">
+                            <img src="./Image/New folder/23_300x170.jpg" class="img-fluid" alt=""  id="23"  aria-valuemin="Petta Paraak-Petta" >
+                        </a> 
+                        <h6>Petta Paraak -Petta MassTamilan.org</h6>
+                    </div>
+                </div>
+                <div id="vikram" style="display: none;">
+                    <div class="col p-2">
+                        <a href="#home" class="listitem">
+                            <img src="./Image/New folder/24_1_300x170.jpg" class="img-fluid" alt=""  id="24" aria-valuemin="Porkanda Singam-Vikram"> 
+                        </a>
+                        <h6>Porkanda Singam - MassTamilan.dev-Vikram</h6>
+                    </div>
+                </div>
+                <div id="darbar" style="display: none;">
+                    <div class="col p-2 text-center">
+                        <a href="#home" class="listitem">
+                            <img src="./Image/New folder/27_1_300x170.jpg" class="img-fluid" alt=""  id="27" aria-valuemin="Thani Vazhi-Darbar"> 
+                        </a>
+                        <h6> Thani Vazhi -Darbar isaiminiya.net</h6>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="bg-dark" id="plays" style="display: none;">
+            <div class="justify-content-center container-fluid col-10 me-lg-0 top-0 me-4 end-0 bg-black">
+                <img src="./Image/img2_1900x900.jpg" alt="" class="img-fluid" id="image">
+                <h3 id="playertext" class="">Welcome</h3>
+                <label for="myprogress" class="form-label" ></label>
+                <input type="range" name="range" class="form-range" min="0" value="0" max="100"  id="myprogress">
+            </div>
+        </div> 
+    </div>
+
+    <script src="./JS/spotify.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d0598a5c5e.js" crossorigin="anonymous"></script>
+</body>
+</html>
